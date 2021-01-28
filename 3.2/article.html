@@ -16,14 +16,14 @@
       // Set bg color of long words
       text = text.replace(/\b\w{7,}\b/g, "<span style='background-color: greenyellow;'>$&</span>");
       // Split every 5 sentences
-      text = text.replaceAll(/([^.?!]+[.?!]){5}/g, "$&</p><p>");
+      text = text.replace(/([^.?!]+?[.?!]){5}/g, "$&</p><p>");
       // Add link to google
       text = text.replace(/\bgoogle\b/ig, "<a href='http://www.google.com'>$&</a>");
       document.body.getElementsByTagName("p")[0].innerHTML = text;
       // Word count
       let body = document.getElementsByTagName("body")[0];
       let word_count = document.createElement("p");
-      word_count.innerHTML = `<strong>${text.length} words</strong>`;
+      word_count.innerHTML = `<strong>${text.split(/\s+/).length} words</strong>`;
       word_count.style = "font-size: 32px;"
       console.log(word_count);
       console.log(body.childNodes);
