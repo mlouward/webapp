@@ -21,12 +21,10 @@
       text = text.replace(/\bgoogle\b/ig, "<a href='http://www.google.com'>$&</a>");
       document.body.getElementsByTagName("p")[0].innerHTML = text;
       // Word count
-      let body = document.getElementsByTagName("body")[0];
+      let body = document.body;
       let word_count = document.createElement("p");
       word_count.innerHTML = `<strong>${text.split(/\s+/).length} words</strong>`;
       word_count.style = "font-size: 32px;"
-      console.log(word_count);
-      console.log(body.childNodes);
       body.insertBefore(word_count, body.childNodes[4]);
     }
   </script>
@@ -34,7 +32,6 @@
     What the Internet is doing to our brains
 
     NICHOLAS CARR</h1>
-
   <p>
     "Dave, stop. Stop, will you? Stop, Dave. Will you stop, Dave?” So the supercomputer HAL pleads with the implacable
     astronaut Dave Bowman in a famous and weirdly poignant scene toward the end of Stanley Kubrick’s 2001: A Space
