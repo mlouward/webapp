@@ -41,7 +41,16 @@ function playSound() {
 }
 
 function disappearHover() {
-  const button = this.document.getElementById("1");
-  button.style.display = "none";
+  const buttons = document.body.getElementsByTagName("button");
+  for (const button of buttons) {
+    button.style.display = "none";
+  }
+}
+
+function showHover() {
+  const buttons = document.body.getElementsByTagName("button");
+  for (const button of buttons) {
+    button.style.display = "inline";
+  }
 }
 
